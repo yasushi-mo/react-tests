@@ -8,6 +8,7 @@
     "plugin:jsx-a11y/strict",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:sonarjs/recommended",
     "prettier"
   ],
   "overrides": [],
