@@ -1,8 +1,7 @@
 import { Link, Route, Routes, useLocation } from "react-router-dom";
-
-const About = () => <div data-testid="about">You are on the about page</div>;
-const Home = () => <div data-testid="home">You are home</div>;
-const NoMatch = () => <div>No match</div>;
+import { About } from "./pages/About";
+import { Home } from "./pages/Home";
+import { NoMatch } from "./pages/NoMatch";
 
 export const LocationDisplay = () => {
   const location = useLocation();
