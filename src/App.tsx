@@ -1,5 +1,6 @@
 import { Link, Route, Routes, useLocation } from "react-router-dom";
 import { About } from "./pages/About";
+import { Form } from "./pages/Form";
 import { Home } from "./pages/Home";
 import { NoMatch } from "./pages/NoMatch";
 
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/form" element={<Form />} />
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </div>
