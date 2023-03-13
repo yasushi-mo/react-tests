@@ -1,3 +1,4 @@
+import "@testing-library/jest-dom";
 import { screen, waitFor } from "@testing-library/react";
 import { Form } from "../../pages/Form";
 import { setup } from "../libs/userEvent";
@@ -32,6 +33,16 @@ describe("Form", () => {
       expect(window.alert).toHaveBeenCalledWith({
         name: "Tom",
       });
+    });
+  });
+
+  test("Error message", async () => {
+    const { user } = setup(<Form />);
+
+    await user.click(screen.getByRole("button", { name: "Submit" }));
+
+    await waitFor(() => {
+      expect(screen.getByText("Please Input your Name")).toBeInTheDocument();
     });
   });
 });
