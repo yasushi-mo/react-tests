@@ -1,3 +1,3 @@
-export const About = () => (
-  <div data-testid="about">You are on the about page</div>
-);
+export const About = () => {
+  return <div>You are on the about page</div>;
+};
