@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom";
 import { screen, waitFor } from "@testing-library/react";
-import { Form } from "../../pages/Form";
-import { setup } from "../libs/userEvent";
+import { Form } from "../../../pages/Form";
+import { setup } from "../../libs/userEvent";
 
 describe("Form", () => {
   beforeEach(() => {
