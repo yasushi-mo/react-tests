@@ -7,7 +7,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/home" />} />
-      <Route path="/home" element={<Home />} />
+      <Route path="/home" element={<Home authorized={true} />} />
       <Route path="/about" element={<About />} />
       <Route path="*" element={<NotFount />} />
     </Routes>
