@@ -28,3 +28,18 @@ describe("vi.fn", () => {
     expect(getApples).toHaveNthReturnedWith(2, 5);
   });
 });
+
+describe("vi.spyOn", () => {
+  const cart = {
+    getApples: () => 4,
+  };
+
+  test("spy method", () => {
+    // Define mock method
+    const spy = vi.spyOn(cart, "getApples");
+    // call mock method
+    cart.getApples();
+    // check if mock is called
+    expect(spy.mock.calls).toHaveLength(1);
+  });
+});
