@@ -40,6 +40,13 @@ describe("vi.spyOn", () => {
     // call mock method
     cart.getApples();
     // check if mock is called
-    expect(spy.mock.calls).toHaveLength(1);
+    expect(spy).toHaveBeenCalled();
+    expect(cart.getApples).toHaveReturnedWith(4);
+  });
+
+  test("overwrite spy method", () => {
+    const spy = vi.spyOn(cart, "getApples").mockImplementation(() => 8);
+    cart.getApples();
+    expect(cart.getApples).toHaveReturnedWith(8);
   });
 });
