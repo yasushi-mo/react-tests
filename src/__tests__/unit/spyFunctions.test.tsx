@@ -1,4 +1,6 @@
+import { render, screen } from "@testing-library/react";
 import { describe, test } from "vitest";
+import { Sum } from "../../pages/Sum";
 
 describe("vi.fn", () => {
   test("spy function no arguments and no returns", () => {
@@ -41,12 +43,27 @@ describe("vi.spyOn", () => {
     cart.getApples();
     // check if mock is called
     expect(spy).toHaveBeenCalled();
-    expect(cart.getApples).toHaveReturnedWith(4);
+    expect(spy).toHaveReturnedWith(4);
   });
 
   test("overwrite spy method", () => {
     const spy = vi.spyOn(cart, "getApples").mockImplementation(() => 8);
     cart.getApples();
-    expect(cart.getApples).toHaveReturnedWith(8);
+    expect(spy).toHaveReturnedWith(8);
+  });
+});
+
+describe("vi.mock", () => {
+  test("spy module", () => {
+    vi.mock("../../libs/calculate", () => {
+      return {
+        sum: vitest // その中のgood.tsのgood関数をモック化
+          .fn()
+          .mockReturnValue(-10),
+      };
+    });
+
+    render(<Sum num1={1} num2={2} />);
+    expect(screen.getByText(`The sum is: -10`)).toBeInTheDocument();
   });
 });
