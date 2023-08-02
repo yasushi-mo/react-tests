@@ -57,9 +57,7 @@ describe("vi.mock", () => {
   test("spy module", () => {
     vi.mock("../../libs/calculate", () => {
       return {
-        sum: vitest // その中のgood.tsのgood関数をモック化
-          .fn()
-          .mockReturnValue(-10),
+        sum: vitest.fn().mockReturnValue(-10),
       };
     });
 
