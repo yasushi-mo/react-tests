@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useForm } from "react-hook-form";
 
-const BOOK_IN_RENTAL_KEY = "book-in-rental";
+export const BOOK_IN_RENTAL_KEY = "book-in-rental";
 
 export const getBookInRental = () => localStorage.getItem(BOOK_IN_RENTAL_KEY);
 
