@@ -8,4 +8,8 @@ describe("localStorage mock", () => {
 
     expect(getBookInRental()).toBe(DUMMY_BOOK_IN_RENTAL);
   });
+  test("get a book in rental from localStorage without setting it", () => {
+    const DUMMY_BOOK_IN_RENTAL = "test book";
+    expect(getBookInRental()).toBe(DUMMY_BOOK_IN_RENTAL);
+  });
 });
