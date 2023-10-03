@@ -22,5 +22,6 @@ describe("localStorage tests", () => {
   test("not get a book in rental from localStorage", () => {
     const DUMMY_BOOK_IN_RENTAL = "test book";
     expect(getBookInRental()).not.toBe(DUMMY_BOOK_IN_RENTAL);
+    expect(getItemSpy).toHaveBeenCalledWith(BOOK_IN_RENTAL_KEY);
   });
 });
