@@ -10,5 +10,8 @@ describe("LocalStorage component", () => {
     expect(
       await screen.findByRole("heading", { name: "Book In Rental" })
     ).toBeInTheDocument();
+
+    expect(await screen.findByText(/Book in rental:/)).toBeInTheDocument();
+    expect(await screen.findByText(/New Book:/)).toBeInTheDocument();
   });
 });
