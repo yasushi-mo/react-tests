@@ -13,5 +13,11 @@ describe("LocalStorage component", () => {
 
     expect(await screen.findByText(/Book in rental:/)).toBeInTheDocument();
     expect(await screen.findByText(/New Book:/)).toBeInTheDocument();
+
+    const input = screen.getByRole("textbox", { name: "New Book:" });
+    const button = screen.getByRole("button", { name: "Submit" });
+
+    await user.type(input, "Test Book Name");
+    await user.click(button);
   });
 });
