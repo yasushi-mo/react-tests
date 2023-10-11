@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { useForm } from "react-hook-form";
 
 export const BOOK_IN_RENTAL_KEY = "book-in-rental";
@@ -10,10 +10,13 @@ export const setBookInRentalInLocalStorage = (book: string) =>
   localStorage.setItem(BOOK_IN_RENTAL_KEY, book);
 
 export const LocalStorage: FC = () => {
+  const [bookInRental, setBookInRental] = useState(
+    getBookInRentalInLocalStorage()
+  );
+
   const { register, handleSubmit } = useForm({
     defaultValues: { newBook: "" },
   });
-  const bookInRental = getBookInRentalInLocalStorage();
 
   return (
     <>
@@ -21,8 +24,8 @@ export const LocalStorage: FC = () => {
       <div>Book in rental: {bookInRental || "none"}</div>
       <form
         onSubmit={handleSubmit((data) => {
+          setBookInRental(data.newBook);
           setBookInRentalInLocalStorage(data.newBook);
-          location.reload();
         })}
       >
         <label htmlFor="newBook">New Book: </label>
