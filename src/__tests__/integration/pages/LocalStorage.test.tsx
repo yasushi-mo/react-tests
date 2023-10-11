@@ -1,9 +1,18 @@
-import { screen } from "@testing-library/react";
+import { screen, waitFor } from "@testing-library/react";
 import { describe } from "vitest";
-import { LocalStorage } from "../../../pages/LocalStorage";
+import { BOOK_IN_RENTAL_KEY, LocalStorage } from "../../../pages/LocalStorage";
 import { setup } from "../../libs/userEvent";
 
 describe("LocalStorage component", () => {
+  const getItemSpy = vi.spyOn(Storage.prototype, "getItem");
+  const setItemSpy = vi.spyOn(Storage.prototype, "setItem");
+
+  afterEach(() => {
+    getItemSpy.mockClear();
+    setItemSpy.mockClear();
+    localStorage.clear();
+  });
+
   test("ui elements and manipulations", async () => {
     const DUMMY_NEW_BOOK = "Test Book Name";
     const { user } = setup(<LocalStorage />);
@@ -22,6 +31,13 @@ describe("LocalStorage component", () => {
     await user.type(input, DUMMY_NEW_BOOK);
     await user.click(button);
 
+    await waitFor(async () => {
+      expect(setItemSpy).toHaveBeenCalledWith(
+        BOOK_IN_RENTAL_KEY,
+        DUMMY_NEW_BOOK
+      );
+      expect(getItemSpy).toHaveBeenCalledWith(BOOK_IN_RENTAL_KEY);
+    });
     expect(await screen.findByText(/Test Book Name/)).toBeInTheDocument();
   });
 });
