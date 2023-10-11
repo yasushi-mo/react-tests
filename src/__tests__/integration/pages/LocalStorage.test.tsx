@@ -13,7 +13,7 @@ describe("LocalStorage component", () => {
     localStorage.clear();
   });
 
-  test("ui elements and manipulations", async () => {
+  test("should work as expected", async () => {
     const DUMMY_NEW_BOOK = "Test Book Name";
     const { user } = setup(<LocalStorage />);
 
