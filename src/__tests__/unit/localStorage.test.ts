@@ -1,8 +1,8 @@
 import { describe, expect, test } from "vitest";
 import {
   BOOK_IN_RENTAL_KEY,
-  getBookInRental,
-  setBookInRental,
+  getBookInRentalInLocalStorage,
+  setBookInRentalInLocalStorage,
 } from "../../pages/LocalStorage";
 
 describe("localStorage tests", () => {
@@ -17,18 +17,18 @@ describe("localStorage tests", () => {
   test("set and get a book in rental from localStorage", () => {
     const DUMMY_BOOK_IN_RENTAL = "test book";
 
-    setBookInRental(DUMMY_BOOK_IN_RENTAL);
+    setBookInRentalInLocalStorage(DUMMY_BOOK_IN_RENTAL);
     expect(setItemSpy).toHaveBeenCalledWith(
       BOOK_IN_RENTAL_KEY,
       DUMMY_BOOK_IN_RENTAL
     );
 
-    expect(getBookInRental()).toBe(DUMMY_BOOK_IN_RENTAL);
+    expect(getBookInRentalInLocalStorage()).toBe(DUMMY_BOOK_IN_RENTAL);
     expect(getItemSpy).toHaveBeenCalledWith(BOOK_IN_RENTAL_KEY);
   });
   test("not get a book in rental from localStorage", () => {
     const DUMMY_BOOK_IN_RENTAL = "test book";
-    expect(getBookInRental()).not.toBe(DUMMY_BOOK_IN_RENTAL);
+    expect(getBookInRentalInLocalStorage()).not.toBe(DUMMY_BOOK_IN_RENTAL);
     expect(getItemSpy).toHaveBeenCalledWith(BOOK_IN_RENTAL_KEY);
   });
 });

@@ -3,16 +3,17 @@ import { useForm } from "react-hook-form";
 
 export const BOOK_IN_RENTAL_KEY = "book-in-rental";
 
-export const getBookInRental = () => localStorage.getItem(BOOK_IN_RENTAL_KEY);
+export const getBookInRentalInLocalStorage = () =>
+  localStorage.getItem(BOOK_IN_RENTAL_KEY);
 
-export const setBookInRental = (book: string) =>
+export const setBookInRentalInLocalStorage = (book: string) =>
   localStorage.setItem(BOOK_IN_RENTAL_KEY, book);
 
 export const LocalStorage: FC = () => {
   const { register, handleSubmit } = useForm({
     defaultValues: { newBook: "" },
   });
-  const bookInRental = getBookInRental();
+  const bookInRental = getBookInRentalInLocalStorage();
 
   return (
     <>
@@ -20,7 +21,7 @@ export const LocalStorage: FC = () => {
       <div>Book in rental: {bookInRental || "none"}</div>
       <form
         onSubmit={handleSubmit((data) => {
-          setBookInRental(data.newBook);
+          setBookInRentalInLocalStorage(data.newBook);
           location.reload();
         })}
       >
