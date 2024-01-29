@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { generateCryptoKey } from "../libs/crypto/crypto";
+import { generateCryptoKey } from "../../libs/crypto/crypto";
 
 export const Crypto: FC = () => {
   const onGenerateKey = async () => {

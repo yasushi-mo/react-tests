@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import { About } from "./pages/About";
-import { Crypto } from "./pages/Crypto";
+import { Crypto } from "./pages/crypto/Crypto";
 import { Form } from "./pages/Form";
 import { Home } from "./pages/Home";
 import { LocalStorage } from "./pages/LocalStorage";
