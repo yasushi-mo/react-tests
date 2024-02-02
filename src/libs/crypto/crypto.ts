@@ -1,15 +1,10 @@
 const ALGORITHM_NAME = "AES-GCM";
-const TAG_LENGTH = 128;
+const KEY_LENGTH = 256;
 
 export const generateCryptoKey = () => {
-  // const algorithm = {
-  // name: 'ECDH',
-  // namedCurve: 'P-521'
-  // };
-  // const keyUsage = ['deriveKey'] as KeyUsage[];
   const algorithm = {
     name: ALGORITHM_NAME,
-    length: 128,
+    length: KEY_LENGTH,
   };
   const keyUsage = ["encrypt", "decrypt"] as KeyUsage[];
 
@@ -21,38 +16,56 @@ export const aesEncrypt = async (key: CryptoKey, plainText: string) => {
 
   const algorithm = {
     name: ALGORITHM_NAME,
-    iv: crypto.getRandomValues(new Uint8Array(16)),
-    // tagLength: TAG_LENGTH
+    iv: crypto.getRandomValues(new Uint8Array(12)),
   };
-  const encryptedText = await crypto.subtle.encrypt(
+
+  const encryptedTextBuffer = await crypto.subtle.encrypt(
     algorithm,
     key,
     encodedText
   );
-  console.log("encrypted:", encryptedText);
+  console.log("encryptedTextBuffer:", encryptedTextBuffer);
 
-  //
-  const combinedText = new Uint8Array(
-    algorithm.iv.byteLength + encryptedText.byteLength
+  const encryptedTextString = window.btoa(
+    String.fromCharCode(...new Uint8Array(encryptedTextBuffer))
   );
-  combinedText.set(algorithm.iv, 0);
-  combinedText.set(new Uint8Array(encryptedText), algorithm.iv.byteLength);
+  console.log("encryptedTextString:", encryptedTextString);
 
-  const combinedTextStr = Array.from(combinedText)
-    .map((byte) => String.fromCharCode(byte))
-    .join("");
-
-  return window.btoa(combinedTextStr);
+  return encryptedTextString;
 };
 
-export const aesDecrypt = async (key: CryptoKey, encryptedData: Uint8Array) => {
+export const aesDecrypt = async (key: CryptoKey, encryptedText: string) => {
+  // Convert the Base64-encoded string to an ArrayBuffer
+  const encryptedTextBuffer = new Uint8Array(
+    window
+      .atob(encryptedText)
+      .split("")
+      .map((char) => char.charCodeAt(0))
+  ).buffer;
+  console.log("encryptedTextBuffer:", encryptedTextBuffer);
+
+  // Ensure the minimum length for the encrypted data
+  if (encryptedTextBuffer.byteLength < 12) {
+    throw new Error("Invalid encrypted data");
+  }
+
+  // Extract IV (first 12 bytes) and
+  const iv = encryptedTextBuffer.slice(0, 12);
+  console.log("🚀 ~ aesDecrypt ~ iv:", iv);
+
   const algorithm = {
     name: ALGORITHM_NAME,
-    iv: encryptedData.subarray(0, 16),
-    tagLength: TAG_LENGTH,
+    iv,
   };
 
-  return new Uint8Array(
-    await crypto.subtle.decrypt(algorithm, key, encryptedData)
-  );
+  const text = encryptedTextBuffer.slice(12);
+  console.log("🚀 ~ aesDecrypt ~ text:", text);
+
+  const decryptedTextBuffer = await crypto.subtle.decrypt(algorithm, key, text);
+  console.log("decryptedTextBuffer:", decryptedTextBuffer);
+
+  const decryptedTextString = new TextDecoder().decode(decryptedTextBuffer);
+  console.log("decryptedTextString:", decryptedTextString);
+
+  return decryptedTextString;
 };

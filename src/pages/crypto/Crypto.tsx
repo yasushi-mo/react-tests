@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import {
   aesDecrypt,
@@ -15,16 +15,24 @@ export const Crypto: FC = () => {
   const [encryptedText, setEncryptedText] = useState("");
   const [decryptedText, setDecryptedText] = useState("");
 
-  const onGenerateKey = async () => {
-    console.log(await generateCryptoKey());
-  };
+  useEffect(() => {
+    const generateKey = async () => {
+      try {
+        const key = await generateCryptoKey();
+        setCryptoKey(key);
+      } catch (error) {
+        console.error("Error generating key:", error);
+      }
+    };
+
+    generateKey();
+  }, []);
 
   const onEncrypt = async (formInput: FormInput) => {
     try {
-      const key = await generateCryptoKey();
-      setCryptoKey(key);
+      if (!cryptoKey) throw new Error("Crypto key is undefined");
 
-      const encrypted = await aesEncrypt(key, formInput.plainText);
+      const encrypted = await aesEncrypt(cryptoKey, formInput.plainText);
       setEncryptedText(encrypted);
     } catch (e) {
       alert(`error:${e}`);
@@ -34,15 +42,20 @@ export const Crypto: FC = () => {
 
   const onDecrypt = async (key: CryptoKey | undefined, encrypted: string) => {
     if (!key) return alert("crypto key is undefined");
-    const decrypted = await aesDecrypt(key, encrypted);
-    // setDecryptedText(decrypted);
+
+    try {
+      const decrypted = await aesDecrypt(key, encrypted);
+      setDecryptedText(decrypted);
+    } catch (e) {
+      alert(`error:${e}`);
+      setDecryptedText("");
+    }
   };
 
   return (
     <div>
       <h2>Crypto</h2>
       <h3>AES-GCM 128</h3>
-      <button onClick={onGenerateKey}>Generate Key</button>
       <form onSubmit={handleSubmit(onEncrypt)}>
         <label htmlFor="plainText">Plain Text: </label>
         <input type="text" {...register("plainText")} />
