@@ -15,6 +15,10 @@ export default defineConfig({
     open: true,
   },
   test: {
+    include: [
+      "**/unit/*.{test,spec}.?(c|m)[jt]s?(x)",
+      "**/integration/**/*.{test,spec}.?(c|m)[jt]s?(x)",
+    ],
     globals: true,
     environment: "jsdom",
     setupFiles: "./src/__tests__/setup.ts",
