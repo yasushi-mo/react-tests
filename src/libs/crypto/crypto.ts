@@ -22,12 +22,12 @@ export const aesEncrypt = async (key: CryptoKey, plainText: string) => {
   const encryptedTextBuffer = await crypto.subtle.encrypt(
     algorithm,
     key,
-    encodedText
+    encodedText,
   );
   console.log("encryptedTextBuffer:", encryptedTextBuffer);
 
   const encryptedTextString = window.btoa(
-    String.fromCharCode(...new Uint8Array(encryptedTextBuffer))
+    String.fromCharCode(...new Uint8Array(encryptedTextBuffer)),
   );
   console.log("encryptedTextString:", encryptedTextString);
 
@@ -40,7 +40,7 @@ export const aesDecrypt = async (key: CryptoKey, encryptedText: string) => {
     window
       .atob(encryptedText)
       .split("")
-      .map((char) => char.charCodeAt(0))
+      .map((char) => char.charCodeAt(0)),
   ).buffer;
   console.log("encryptedTextBuffer:", encryptedTextBuffer);
 

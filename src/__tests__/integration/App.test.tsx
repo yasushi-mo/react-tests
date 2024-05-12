@@ -12,7 +12,7 @@ describe("App routing", () => {
         <App />
         <LocationDisplay />
       </>,
-      { wrapper: BrowserRouter }
+      { wrapper: BrowserRouter },
     );
 
     // verify page content for default route
@@ -37,7 +37,7 @@ describe("App routing", () => {
     render(
       <MemoryRouter initialEntries={[badRoute]}>
         <App />
-      </MemoryRouter>
+      </MemoryRouter>,
     );
 
     expect(screen.getByText(/404 Not Found/i)).toBeInTheDocument();

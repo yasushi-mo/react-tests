@@ -20,7 +20,7 @@ describe("localStorage tests", () => {
     setBookInRentalInLocalStorage(DUMMY_BOOK_IN_RENTAL);
     expect(setItemSpy).toHaveBeenCalledWith(
       BOOK_IN_RENTAL_KEY,
-      DUMMY_BOOK_IN_RENTAL
+      DUMMY_BOOK_IN_RENTAL,
     );
 
     expect(getBookInRentalInLocalStorage()).toBe(DUMMY_BOOK_IN_RENTAL);

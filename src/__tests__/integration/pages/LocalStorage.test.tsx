@@ -18,7 +18,7 @@ describe("LocalStorage component", () => {
     const { user } = setup(<LocalStorage />);
 
     expect(
-      await screen.findByRole("heading", { name: "Book In Rental" })
+      await screen.findByRole("heading", { name: "Book In Rental" }),
     ).toBeInTheDocument();
 
     expect(await screen.findByText(/Book in rental:/)).toBeInTheDocument();
@@ -34,7 +34,7 @@ describe("LocalStorage component", () => {
     await waitFor(async () => {
       expect(setItemSpy).toHaveBeenCalledWith(
         BOOK_IN_RENTAL_KEY,
-        DUMMY_NEW_BOOK
+        DUMMY_NEW_BOOK,
       );
       expect(getItemSpy).toHaveBeenCalledWith(BOOK_IN_RENTAL_KEY);
     });

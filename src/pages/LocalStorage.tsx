@@ -11,7 +11,7 @@ export const setBookInRentalInLocalStorage = (book: string) =>
 
 export const LocalStorage: FC = () => {
   const [bookInRental, setBookInRental] = useState(
-    getBookInRentalInLocalStorage()
+    getBookInRentalInLocalStorage(),
   );
 
   const { register, handleSubmit } = useForm({
