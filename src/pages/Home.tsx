@@ -17,6 +17,8 @@ export const Home = ({ authorized }: { authorized: boolean }) => {
       <Link to="/local-storage">localStorage</Link>
       <br />
       <Link to="/crypto">Crypto</Link>
+      <br />
+      <Link to="/a11y">A11Y</Link>
     </>
   );
 };
