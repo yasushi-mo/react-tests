@@ -3,6 +3,9 @@ import { FC } from "react";
 export const A11Y: FC = () => {
   return (
     <div>
+      <h3>aria-proptypes</h3>
+      <div aria-hidden="true">foo</div>
+      <hr />
       <h3>aria-props</h3>
       <div>
         <input aria-labelledby="address_label" />
