@@ -3,6 +3,11 @@ import { FC } from "react";
 export const A11Y: FC = () => {
   return (
     <div>
+      <h3>aria-props</h3>
+      <div>
+        <input aria-labelledby="address_label" />
+      </div>
+      <hr />
       <h3>aria-activedescendant-has-tabindex</h3>
       {/* <div aria-activedescendant="test" tabIndex={0} /> */}
       <hr />
