@@ -1,6 +1,8 @@
 export const A11Y = () => {
   return (
     <div>
+      <h3>aria-activedescendant-has-tabindex</h3>
+      {/* <div aria-activedescendant="test" tabIndex={0} /> */}
       <h3>anchor-is-valid</h3>
       <a href="https://example.com">Example</a>
       <h3>anchor-has-content</h3>
