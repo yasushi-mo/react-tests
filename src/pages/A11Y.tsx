@@ -3,6 +3,9 @@ import { FC } from "react";
 export const A11Y: FC = () => {
   return (
     <div>
+      <h3>autocomplete-valid</h3>
+      <input type="text" autoComplete="name" />
+      <hr />
       <h3>aria-unsupported-elements</h3>
       <script />
       <hr />
