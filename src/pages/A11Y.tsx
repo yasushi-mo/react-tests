@@ -3,6 +3,9 @@ import { FC } from "react";
 export const A11Y: FC = () => {
   return (
     <div>
+      <h3>aria-unsupported-elements</h3>
+      <script />
+      <hr />
       <h3>aria-role</h3>
       <div role="alert">Test</div>
       <hr />
