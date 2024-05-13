@@ -1,6 +1,7 @@
 export const A11Y = () => {
   return (
     <div>
+      <a href="https://example.com">Example</a>
       <h3>anchor-has-content</h3>
       <p>
         <a href="https://example.com">Example</a>
