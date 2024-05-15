@@ -8,6 +8,9 @@ export const A11Y: FC = () => {
           eslint-plugin-jsx-a11y
         </a>
       </h2>
+      <hr />
+      <h3>click-events-have-key-events</h3>
+      <hr />
       <h3>autocomplete-valid</h3>
       <input type="text" autoComplete="name" />
       <hr />
