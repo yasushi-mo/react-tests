@@ -9,6 +9,8 @@ export const A11Y: FC = () => {
         </a>
       </h2>
       <hr />
+      <h3>heading-has-content</h3>
+      <hr />
       <h3>click-events-have-key-events</h3>
       <hr />
       <h3>autocomplete-valid</h3>
