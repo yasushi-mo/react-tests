@@ -9,6 +9,8 @@ export const A11Y: FC = () => {
         </a>
       </h2>
       <hr />
+      <h3>html-has-lang</h3>
+      <hr />
       <h3>heading-has-content</h3>
       <hr />
       <h3>click-events-have-key-events</h3>
