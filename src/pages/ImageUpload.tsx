@@ -15,7 +15,7 @@ export const ImageUpload: FC = () => {
     setImage(URL.createObjectURL(file));
   };
 
-  const handleSubmitImage = async () => {
+  const handleUploadImage = async () => {
     try {
       const data = new FormData();
       data.append("file", image);
@@ -40,7 +40,7 @@ export const ImageUpload: FC = () => {
     <div>
       <h2>Image Upload</h2>
       <input type="file" onChange={handleChooseImage} />
-      <button onClick={handleSubmitImage} disabled={!image}>
+      <button onClick={handleUploadImage} disabled={!image}>
         Image Upload
       </button>
       <hr />
