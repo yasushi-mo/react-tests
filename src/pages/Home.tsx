@@ -19,6 +19,8 @@ export const Home = ({ authorized }: { authorized: boolean }) => {
       <Link to="/crypto">Crypto</Link>
       <br />
       <Link to="/a11y">A11Y</Link>
+      <br />
+      <Link to="/image-upload">Image Upload</Link>
     </>
   );
 };

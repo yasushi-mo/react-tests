@@ -7,6 +7,7 @@ import { LocalStorage } from "./pages/LocalStorage";
 import { NotFount } from "./pages/NotFound";
 import { Sum } from "./pages/Sum";
 import { A11Y } from "./pages/A11Y";
+import { ImageUpload } from "./pages/ImageUpload";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route path="/local-storage" element={<LocalStorage />} />
       <Route path="/crypto" element={<Crypto />} />
       <Route path="/a11y" element={<A11Y />} />
+      <Route path="/image-upload" element={<ImageUpload />} />
       <Route path="*" element={<NotFount />} />
     </Routes>
   );
