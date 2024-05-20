@@ -28,7 +28,7 @@ export const ImageUpload: FC = () => {
         {
           method: "POST",
           body: data,
-        }
+        },
       );
       const jsonData = await response.json();
       setUploadedImage(jsonData.url);
