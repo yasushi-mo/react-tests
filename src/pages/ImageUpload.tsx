@@ -23,6 +23,7 @@ export const ImageUpload: FC = () => {
       data.append("cloud_name", CLOUD_NAME);
 
       const response = await fetch(
+        // https://cloudinary.com/documentation/upload_images#basic_uploading
         `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`,
         {
           method: "POST",
