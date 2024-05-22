@@ -32,6 +32,7 @@ export const ImageUpload: FC = () => {
       );
       const jsonData = await response.json();
       setUploadedImage(jsonData.url);
+      setImage("");
     } catch (error) {
       alert("Failed to image upload");
     }
