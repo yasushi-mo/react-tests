@@ -28,7 +28,7 @@ export const ImageUpload: FC = () => {
         {
           method: "POST",
           body: data,
-        },
+        }
       );
       const jsonData = await response.json();
       setUploadedImage(jsonData.url);
@@ -49,7 +49,7 @@ export const ImageUpload: FC = () => {
       {image ? <img src={image} alt="chosen" /> : <p>No Image Chosen</p>}
       <hr />
       <h3>Uploaded Image</h3>
-      <p>{uploadedImage}</p>
+      <p>{uploadedImage || "No Imaged Uploaded"}</p>
     </div>
   );
 };
