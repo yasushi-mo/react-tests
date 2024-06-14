@@ -8,6 +8,7 @@ import { NotFount } from "./pages/NotFound";
 import { Sum } from "./pages/Sum";
 import { A11Y } from "./pages/A11Y";
 import { ImageUpload } from "./pages/ImageUpload";
+import { AnchorAndButton } from "./pages/AnchorAndButton";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path="/crypto" element={<Crypto />} />
       <Route path="/a11y" element={<A11Y />} />
       <Route path="/image-upload" element={<ImageUpload />} />
+      <Route path="/link-and-button" element={<AnchorAndButton />} />
       <Route path="*" element={<NotFount />} />
     </Routes>
   );
