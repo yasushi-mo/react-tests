@@ -21,6 +21,8 @@ export const Home = ({ authorized }: { authorized: boolean }) => {
       <Link to="/a11y">A11Y</Link>
       <br />
       <Link to="/image-upload">Image Upload</Link>
+      <br />
+      <Link to="/link-and-button">Link and Button</Link>
     </>
   );
 };
