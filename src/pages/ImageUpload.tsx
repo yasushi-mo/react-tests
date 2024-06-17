@@ -51,7 +51,7 @@ export const ImageUpload: FC = () => {
       {image ? <img src={image} alt="chosen" /> : <p>No Image Chosen</p>}
       <hr />
       <h3>Uploaded Image</h3>
-      <p>{uploadedImage || "No Imaged Uploaded"}</p>
+      <p>{uploadedImage || "No Image Uploaded"}</p>
     </div>
   );
 };
