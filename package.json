@@ -22,6 +22,7 @@
   "dependencies": {
     "@mantine/core": "^7.1.2",
     "@mantine/hooks": "^7.1.2",
+    "next-barcode": "^1.5.0",
     "react": "^18.3.1",
     "react-barcode": "^1.5.3",
     "react-dom": "^18.3.1",
