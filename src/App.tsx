@@ -9,6 +9,7 @@ import { Sum } from "./pages/Sum";
 import { A11Y } from "./pages/A11Y";
 import { ImageUpload } from "./pages/ImageUpload";
 import { AnchorAndButton } from "./pages/AnchorAndButton";
+import { BarcodeLibraries } from "./pages/BarcodeLibraries";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Route path="/a11y" element={<A11Y />} />
       <Route path="/image-upload" element={<ImageUpload />} />
       <Route path="/link-and-button" element={<AnchorAndButton />} />
+      <Route path="/barcode" element={<BarcodeLibraries />} />
       <Route path="*" element={<NotFount />} />
     </Routes>
   );

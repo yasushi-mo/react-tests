@@ -23,6 +23,8 @@ export const Home = ({ authorized }: { authorized: boolean }) => {
       <Link to="/image-upload">Image Upload</Link>
       <br />
       <Link to="/link-and-button">Link and Button</Link>
+      <br />
+      <Link to="/barcode">Barcode</Link>
     </>
   );
 };
