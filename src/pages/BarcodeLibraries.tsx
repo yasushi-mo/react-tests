@@ -12,7 +12,12 @@ export const BarcodeLibraries: FC = () => {
       <h2>React Barcode</h2>
       <Barcode value="12345678" />
       <h2>Next Barcode</h2>
-      <svg ref={inputRef} />
+      {/* <h3>SVG</h3>
+      <svg ref={inputRef} /> */}
+      {/* <h3>Canvas</h3>
+      <canvas ref={inputRef} /> */}
+      <h3>Image</h3>
+      <img ref={inputRef} alt="" />
     </>
   );
 };
