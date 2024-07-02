@@ -19,6 +19,9 @@ export default defineConfig({
       "**/unit/*.{test,spec}.?(c|m)[jt]s?(x)",
       "**/integration/**/*.{test,spec}.?(c|m)[jt]s?(x)",
     ],
+    coverage: {
+      reporter: ["text", "json", "html"],
+    },
     globals: true,
     environment: "jsdom",
     setupFiles: "./src/__tests__/setup.ts",
