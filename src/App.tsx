@@ -10,6 +10,7 @@ import { A11Y } from "./pages/A11Y";
 import { ImageUpload } from "./pages/ImageUpload";
 import { AnchorAndButton } from "./pages/AnchorAndButton";
 import { BarcodeLibraries } from "./pages/BarcodeLibraries";
+import { PDF } from "./pages/PDF";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <Route path="/image-upload" element={<ImageUpload />} />
       <Route path="/link-and-button" element={<AnchorAndButton />} />
       <Route path="/barcode" element={<BarcodeLibraries />} />
+      <Route path="/pdf" element={<PDF />} />
       <Route path="*" element={<NotFount />} />
     </Routes>
   );
