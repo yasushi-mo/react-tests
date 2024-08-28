@@ -11,6 +11,7 @@ import { ImageUpload } from "./pages/ImageUpload";
 import { AnchorAndButton } from "./pages/AnchorAndButton";
 import { BarcodeLibraries } from "./pages/BarcodeLibraries";
 import { PDF } from "./pages/PDF";
+import { BarCharts } from "./pages/BarCharts";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <Route path="/link-and-button" element={<AnchorAndButton />} />
       <Route path="/barcode" element={<BarcodeLibraries />} />
       <Route path="/pdf" element={<PDF />} />
+      <Route path="/bar-charts" element={<BarCharts />} />
       <Route path="*" element={<NotFount />} />
     </Routes>
   );
