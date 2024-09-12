@@ -12,6 +12,7 @@ import { AnchorAndButton } from "./pages/AnchorAndButton";
 import { BarcodeLibraries } from "./pages/BarcodeLibraries";
 import { PDF } from "./pages/PDF";
 import { BarCharts } from "./pages/BarCharts";
+import { ZoomPanPinch } from "./pages/ZoomPanPinch";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
       <Route path="/barcode" element={<BarcodeLibraries />} />
       <Route path="/pdf" element={<PDF />} />
       <Route path="/bar-charts" element={<BarCharts />} />
+      <Route path="/zoom-pan-pinch" element={<ZoomPanPinch />} />
       <Route path="*" element={<NotFount />} />
     </Routes>
   );
