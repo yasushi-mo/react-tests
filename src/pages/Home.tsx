@@ -29,6 +29,8 @@ export const Home = ({ authorized }: { authorized: boolean }) => {
       <Link to="/pdf">PDF</Link>
       <br />
       <Link to="/bar-charts">BarCharts</Link>
+      <br />
+      <Link to="/zoom-pan-pinch">ZoomPanPinch</Link>
     </>
   );
 };
