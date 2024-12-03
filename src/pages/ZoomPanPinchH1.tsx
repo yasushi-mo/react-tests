@@ -1,13 +1,11 @@
 import { FC } from "react";
 import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
 
-export const ZoomPanPinch: FC = () => {
+export const ZoomPanPinchH1: FC = () => {
   return (
     <TransformWrapper>
       <TransformComponent>
-        <svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
-          <image href="./snowman.jpg" width="600" height="400" />
-        </svg>
+        <h1>Zoom Pan Pinch</h1>
       </TransformComponent>
     </TransformWrapper>
   );
