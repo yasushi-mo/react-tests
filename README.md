@@ -4,3 +4,4 @@
 - [【TypeScript】Utility Types で型を再利用](https://qiita.com/Yasushi-Mo/items/90ea42d5981c343f3d81)
 - [【TypeScript】Generics で型の安全性とコードの共通化を両立](https://qiita.com/Yasushi-Mo/items/b2fcc0359f0b5609a473)
 - [React-pdf を使ってみた](https://qiita.com/Yasushi-Mo/items/93aecc0a204eb683d6bc)
+- [【React】React Zoom Pan Pinch を使ってみた](https://qiita.com/Yasushi-Mo/items/8bef1c5fc80f7e8cf5ee)
