@@ -31,6 +31,8 @@ export const Home = ({ authorized }: { authorized: boolean }) => {
       <Link to="/bar-charts">BarCharts</Link>
       <br />
       <Link to="/zoom-pan-pinch">ZoomPanPinch</Link>
+      <br />
+      <Link to="/dompurify/safe">DOMPurify Safe</Link>
     </>
   );
 };

@@ -15,6 +15,7 @@ import { BarCharts } from "./pages/BarCharts";
 import { ZoomPanPinchImg } from "./pages/ZoomPanPinchImg";
 import { ZoomPanPinchH1 } from "./pages/ZoomPanPinchH1";
 import { ZoomPanPinch } from "./pages/ZoomPanPinch";
+import { Safe } from "./pages/dompurify/Safe";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
       <Route path="/zoom-pan-pinch" element={<ZoomPanPinch />} />
       <Route path="/zoom-pan-pinch-h1" element={<ZoomPanPinchH1 />} />
       <Route path="/zoom-pan-pinch-img" element={<ZoomPanPinchImg />} />
+      <Route path="/dompurify/safe" element={<Safe />} />
       <Route path="*" element={<NotFount />} />
     </Routes>
   );
