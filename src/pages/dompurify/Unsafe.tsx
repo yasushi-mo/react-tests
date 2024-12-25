@@ -5,6 +5,7 @@ export const Unsafe: FC = () => {
     <div>
       <h2>Hello World!</h2>
       <script>alert('This is unsafe!');</script>
+      <button onclick="alert('Still unsafe!')">Click me</button>
     </div>
   `;
 
