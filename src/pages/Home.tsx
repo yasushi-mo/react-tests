@@ -33,6 +33,8 @@ export const Home = ({ authorized }: { authorized: boolean }) => {
       <Link to="/zoom-pan-pinch">ZoomPanPinch</Link>
       <br />
       <Link to="/dompurify/safe">DOMPurify Safe</Link>
+      <br />
+      <Link to="/dompurify/unsafe">DOMPurify Unsafe</Link>
     </>
   );
 };

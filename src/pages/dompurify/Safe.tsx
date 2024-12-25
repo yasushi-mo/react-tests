@@ -2,14 +2,14 @@ import { FC } from "react";
 import DOMPurify from "dompurify";
 
 export const Safe: FC = () => {
-  const unsafeHTML = `
+  const potentiallyUnsafeHTML = `
     <div>
       <h2>Hello World!</h2>
       <script>alert("This is unsafe!");</script>
     </div>
   `;
 
-  const sanitizedHTML = DOMPurify.sanitize(unsafeHTML);
+  const sanitizedHTML = DOMPurify.sanitize(potentiallyUnsafeHTML);
 
   return (
     <div>
