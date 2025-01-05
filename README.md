@@ -9,3 +9,4 @@
 - [【TypeScript】Utility Types で型を再利用](https://qiita.com/Yasushi-Mo/items/90ea42d5981c343f3d81)
 - [【TypeScript】Generics で型の安全性とコードの共通化を両立](https://qiita.com/Yasushi-Mo/items/b2fcc0359f0b5609a473)
 - [【TypeScript】タグ付き（判別可能な）ユニオン型](https://qiita.com/Yasushi-Mo/items/64931a51a527703fe217)
+- [【TyeScript】never型の概要](https://qiita.com/Yasushi-Mo/items/33b417c4d9464c827465)
