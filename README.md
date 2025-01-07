@@ -10,3 +10,4 @@
 - [【TypeScript】Generics で型の安全性とコードの共通化を両立](https://qiita.com/Yasushi-Mo/items/b2fcc0359f0b5609a473)
 - [【TypeScript】タグ付き（判別可能な）ユニオン型](https://qiita.com/Yasushi-Mo/items/64931a51a527703fe217)
 - [【TyeScript】never型の概要](https://qiita.com/Yasushi-Mo/items/33b417c4d9464c827465)
+- [【TyeScript】never型を使った網羅性チェック](https://qiita.com/Yasushi-Mo/items/f9bc873aa74f2ea78dc6)
