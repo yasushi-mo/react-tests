@@ -11,43 +11,57 @@ import { FlatCompat } from "@eslint/eslintrc";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const compat = new FlatCompat({
-    baseDirectory: __dirname,
-    recommendedConfig: js.configs.recommended,
-    allConfig: js.configs.all
+  baseDirectory: __dirname,
+  recommendedConfig: js.configs.recommended,
+  allConfig: js.configs.all,
 });
 
-export default [...fixupConfigRules(compat.extends(
-    "eslint:recommended",
-    "plugin:jsx-a11y/strict",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "plugin:@typescript-eslint/recommended",
-)), {
+export default [
+  ...fixupConfigRules(
+    compat.extends(
+      "eslint:recommended",
+      "plugin:jsx-a11y/strict",
+      "plugin:react/recommended",
+      "plugin:react-hooks/recommended",
+      "plugin:@typescript-eslint/recommended"
+    )
+  ),
+  {
     plugins: {
-        react: fixupPluginRules(react),
-        "@typescript-eslint": fixupPluginRules(typescriptEslint),
+      react: fixupPluginRules(react),
+      "@typescript-eslint": fixupPluginRules(typescriptEslint),
     },
 
     languageOptions: {
-        globals: {
-            ...globals.browser,
-        },
+      globals: {
+        ...globals.browser,
+      },
 
-        parser: tsParser,
-        ecmaVersion: "latest",
-        sourceType: "script",
+      parser: tsParser,
+      ecmaVersion: "latest",
+      sourceType: "script",
+    },
+
+    settings: {
+      react: {
+        version: "detect",
+      },
     },
 
     rules: {
-        "react/jsx-uses-react": "off",
-        "react/react-in-jsx-scope": "off",
+      "react/jsx-uses-react": "off",
+      "react/react-in-jsx-scope": "off",
 
-        "jsx-a11y/alt-text": [2, {
-            elements: ["img", "object", "area", "input[type=\"image\"]"],
-            img: ["Image"],
-            object: ["Object"],
-            area: ["Area"],
-            "input[type=\"image\"]": ["InputImage"],
-        }],
+      "jsx-a11y/alt-text": [
+        2,
+        {
+          elements: ["img", "object", "area", 'input[type="image"]'],
+          img: ["Image"],
+          object: ["Object"],
+          area: ["Area"],
+          'input[type="image"]': ["InputImage"],
+        },
+      ],
     },
-}];
+  },
+];
