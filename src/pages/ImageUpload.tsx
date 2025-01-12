@@ -35,7 +35,7 @@ export const ImageUpload: FC = () => {
       setImage("");
       alert("Succeeded in image upload");
     } catch (error) {
-      alert("Failed to image upload");
+      alert("Failed to image upload" + error);
     }
   };
 
