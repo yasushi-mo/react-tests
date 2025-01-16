@@ -4,7 +4,6 @@ export function throwError(message: string): never {
 }
 
 export function infiniteLoop(): never {
-   
   while (true) {
     // Infinite loop
   }
