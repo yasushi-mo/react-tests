@@ -49,6 +49,23 @@ export default [
     },
 
     rules: {
+      "@typescript-eslint/naming-convention": [
+        "error",
+        // {
+        //   selector: "typeAlias",
+        //   format: ["PascalCase"],
+        //   suffix: ["Type"],
+        // },
+        {
+          selector: "typeAlias",
+          format: ["PascalCase"],
+          custom: {
+            regex: "Type$",
+            match: false,
+          },
+        },
+      ],
+
       "react/jsx-uses-react": "off",
       "react/react-in-jsx-scope": "off",
 
