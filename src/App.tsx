@@ -18,6 +18,7 @@ import { ZoomPanPinch } from "./pages/ZoomPanPinch";
 import { Safe } from "./pages/dompurify/Safe";
 import { Unsafe } from "./pages/dompurify/Unsafe";
 import SvgWithoutForeignObject from "./pages/foreignObjects/SvgWithoutForeignObject";
+import SvgWithForeignObject from "./pages/foreignObjects/SvgWithForeignObject";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
         path="/foreign-objects/without"
         element={<SvgWithoutForeignObject />}
       />
+      <Route path="/foreign-objects/with" element={<SvgWithForeignObject />} />
       <Route path="*" element={<NotFount />} />
     </Routes>
   );
