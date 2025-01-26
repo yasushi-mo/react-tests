@@ -17,6 +17,7 @@ import { ZoomPanPinchH1 } from "./pages/ZoomPanPinchH1";
 import { ZoomPanPinch } from "./pages/ZoomPanPinch";
 import { Safe } from "./pages/dompurify/Safe";
 import { Unsafe } from "./pages/dompurify/Unsafe";
+import SvgWithoutForeignObject from "./pages/foreignObjects/SvgWithoutForeignObject";
 
 function App() {
   return (
@@ -39,6 +40,10 @@ function App() {
       <Route path="/zoom-pan-pinch-img" element={<ZoomPanPinchImg />} />
       <Route path="/dompurify/safe" element={<Safe />} />
       <Route path="/dompurify/unsafe" element={<Unsafe />} />
+      <Route
+        path="/foreign-objects/without"
+        element={<SvgWithoutForeignObject />}
+      />
       <Route path="*" element={<NotFount />} />
     </Routes>
   );
