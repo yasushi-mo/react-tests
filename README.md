@@ -12,5 +12,8 @@
 - [【TyeScript】never型の概要](https://qiita.com/Yasushi-Mo/items/33b417c4d9464c827465)
 - [【TyeScript】never型を使った網羅性チェック](https://qiita.com/Yasushi-Mo/items/f9bc873aa74f2ea78dc6)
 
+## SVG
+- [【SVG】foreginObject を使って SVG でリッチなUI表現を実装する](https://qiita.com/Yasushi-Mo/items/6b2f7443527ef29f3f6c)
+
 ## ESLint
 - [【ESLint / Flat Config】naming-convention を使って命名規則をチェックする](https://qiita.com/Yasushi-Mo/items/a5fcd615a44b4f15390a)
