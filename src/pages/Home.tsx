@@ -35,6 +35,10 @@ export const Home = ({ authorized }: { authorized: boolean }) => {
       <Link to="/dompurify/safe">DOMPurify Safe</Link>
       <br />
       <Link to="/dompurify/unsafe">DOMPurify Unsafe</Link>
+      <br />
+      <Link to="/foreign-objects/without">SvgWithoutForeignObject</Link>
+      <br />
+      <Link to="/foreign-objects/with">SvgWithForeignObject</Link>
     </>
   );
 };
