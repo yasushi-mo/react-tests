@@ -39,6 +39,10 @@ export const Home = ({ authorized }: { authorized: boolean }) => {
       <Link to="/foreign-objects/without">SvgWithoutForeignObject</Link>
       <br />
       <Link to="/foreign-objects/with">SvgWithForeignObject</Link>
+      <br />
+      <Link to="/playwright/to-have-css/background-color-changing-button">
+        BackgroundChangingButton
+      </Link>
     </>
   );
 };

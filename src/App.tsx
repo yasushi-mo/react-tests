@@ -19,6 +19,7 @@ import { Safe } from "./pages/dompurify/Safe";
 import { Unsafe } from "./pages/dompurify/Unsafe";
 import SvgWithoutForeignObject from "./pages/foreignObjects/SvgWithoutForeignObject";
 import SvgWithForeignObject from "./pages/foreignObjects/SvgWithForeignObject";
+import { BackgroundColorChangingButton } from "./pages/playwright/toHaveCSS/BackgroundColorChangingButton";
 
 function App() {
   return (
@@ -46,6 +47,10 @@ function App() {
         element={<SvgWithoutForeignObject />}
       />
       <Route path="/foreign-objects/with" element={<SvgWithForeignObject />} />
+      <Route
+        path="/playwright/to-have-css/background-color-changing-button"
+        element={<BackgroundColorChangingButton />}
+      />
       <Route path="*" element={<NotFount />} />
     </Routes>
   );
