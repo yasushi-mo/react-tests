@@ -20,6 +20,7 @@ import { Unsafe } from "./pages/dompurify/Unsafe";
 import SvgWithoutForeignObject from "./pages/foreignObjects/SvgWithoutForeignObject";
 import SvgWithForeignObject from "./pages/foreignObjects/SvgWithForeignObject";
 import { BackgroundColorChangingButton } from "./pages/playwright/toHaveCSS/BackgroundColorChangingButton";
+import { HeadingFontSize } from "./pages/playwright/toHaveCSS/HeadingFontSize";
 
 function App() {
   return (
@@ -50,6 +51,10 @@ function App() {
       <Route
         path="/playwright/to-have-css/background-color-changing-button"
         element={<BackgroundColorChangingButton />}
+      />
+      <Route
+        path="/playwright/to-have-css/heading-font-size"
+        element={<HeadingFontSize />}
       />
       <Route path="*" element={<NotFount />} />
     </Routes>

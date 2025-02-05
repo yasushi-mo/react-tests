@@ -43,6 +43,10 @@ export const Home = ({ authorized }: { authorized: boolean }) => {
       <Link to="/playwright/to-have-css/background-color-changing-button">
         BackgroundChangingButton
       </Link>
+      <br />
+      <Link to="/playwright/to-have-css/heading-font-size">
+        HeadingFontSize
+      </Link>
     </>
   );
 };
