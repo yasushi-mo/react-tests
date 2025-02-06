@@ -1,11 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { maskedCardNumber } from "../libs/String/padStart";
 
 export const Home = ({ authorized }: { authorized: boolean }) => {
   const [buttonText, setButtonText] = useState("button");
-
-  console.log(maskedCardNumber);
 
   return (
     <>
