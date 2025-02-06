@@ -12,3 +12,8 @@ const cardNumber = "1234567812345678";
 const maskedCardNumber = cardNumber.slice(-4).padStart(cardNumber.length, "*");
 console.log(maskedCardNumber);
 // Output: "************5678"
+
+const category = "Science";
+const formattedCategory = category.padStart(category.length + 3, "#");
+console.log(formattedCategory);
+// Output: "###Science"
