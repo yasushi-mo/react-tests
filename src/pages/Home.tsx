@@ -47,6 +47,8 @@ export const Home = ({ authorized }: { authorized: boolean }) => {
       <Link to="/playwright/to-have-css/heading-font-size">
         HeadingFontSize
       </Link>
+      <br />
+      <Link to="/playwright/to-have-css/hover-button">HoverButton</Link>
     </>
   );
 };
