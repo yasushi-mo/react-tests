@@ -39,6 +39,18 @@ export const Home = ({ authorized }: { authorized: boolean }) => {
       <Link to="/foreign-objects/without">SvgWithoutForeignObject</Link>
       <br />
       <Link to="/foreign-objects/with">SvgWithForeignObject</Link>
+      <br />
+      <Link to="/playwright/to-have-css/background-color-changing-button">
+        BackgroundChangingButton
+      </Link>
+      <br />
+      <Link to="/playwright/to-have-css/heading-font-size">
+        HeadingFontSize
+      </Link>
+      <br />
+      <Link to="/playwright/to-have-css/hover-button">HoverButton</Link>
+      <br />
+      <Link to="/playwright/to-have-css/fade-in-text">FadeInText</Link>
     </>
   );
 };

@@ -19,6 +19,10 @@ import { Safe } from "./pages/dompurify/Safe";
 import { Unsafe } from "./pages/dompurify/Unsafe";
 import SvgWithoutForeignObject from "./pages/foreignObjects/SvgWithoutForeignObject";
 import SvgWithForeignObject from "./pages/foreignObjects/SvgWithForeignObject";
+import { BackgroundColorChangingButton } from "./pages/playwright/toHaveCSS/BackgroundColorChangingButton";
+import { HeadingFontSize } from "./pages/playwright/toHaveCSS/HeadingFontSize";
+import { HoverButton } from "./pages/playwright/toHaveCSS/HoverButton";
+import { FadeInText } from "./pages/playwright/toHaveCSS/HadeInText";
 
 function App() {
   return (
@@ -46,6 +50,22 @@ function App() {
         element={<SvgWithoutForeignObject />}
       />
       <Route path="/foreign-objects/with" element={<SvgWithForeignObject />} />
+      <Route
+        path="/playwright/to-have-css/background-color-changing-button"
+        element={<BackgroundColorChangingButton />}
+      />
+      <Route
+        path="/playwright/to-have-css/heading-font-size"
+        element={<HeadingFontSize />}
+      />
+      <Route
+        path="/playwright/to-have-css/hover-button"
+        element={<HoverButton />}
+      />
+      <Route
+        path="/playwright/to-have-css/fade-in-text"
+        element={<FadeInText />}
+      />
       <Route path="*" element={<NotFount />} />
     </Routes>
   );
