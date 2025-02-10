@@ -49,6 +49,8 @@ export const Home = ({ authorized }: { authorized: boolean }) => {
       </Link>
       <br />
       <Link to="/playwright/to-have-css/hover-button">HoverButton</Link>
+      <br />
+      <Link to="/playwright/to-have-css/fade-in-text">FadeInText</Link>
     </>
   );
 };

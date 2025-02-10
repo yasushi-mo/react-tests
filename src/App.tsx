@@ -22,6 +22,7 @@ import SvgWithForeignObject from "./pages/foreignObjects/SvgWithForeignObject";
 import { BackgroundColorChangingButton } from "./pages/playwright/toHaveCSS/BackgroundColorChangingButton";
 import { HeadingFontSize } from "./pages/playwright/toHaveCSS/HeadingFontSize";
 import { HoverButton } from "./pages/playwright/toHaveCSS/HoverButton";
+import { FadeInText } from "./pages/playwright/toHaveCSS/HadeInText";
 
 function App() {
   return (
@@ -60,6 +61,10 @@ function App() {
       <Route
         path="/playwright/to-have-css/hover-button"
         element={<HoverButton />}
+      />
+      <Route
+        path="/playwright/to-have-css/fade-in-text"
+        element={<FadeInText />}
       />
       <Route path="*" element={<NotFount />} />
     </Routes>
