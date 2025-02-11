@@ -25,6 +25,8 @@
     "@react-pdf/renderer": "^3.4.4",
     "d3": "^7.9.0",
     "dompurify": "^3.2.3",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.2",
     "next-barcode": "^1.5.0",
     "react": "^18.3.1",
     "react-barcode": "^1.5.3",
