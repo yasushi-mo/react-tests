@@ -23,6 +23,7 @@ import { BackgroundColorChangingButton } from "./pages/playwright/toHaveCSS/Back
 import { HeadingFontSize } from "./pages/playwright/toHaveCSS/HeadingFontSize";
 import { HoverButton } from "./pages/playwright/toHaveCSS/HoverButton";
 import { FadeInText } from "./pages/playwright/toHaveCSS/HadeInText";
+import { PdfExportSample } from "./pages/html2canvas-jspdf/PdfExportSample";
 
 function App() {
   return (
@@ -66,6 +67,7 @@ function App() {
         path="/playwright/to-have-css/fade-in-text"
         element={<FadeInText />}
       />
+      <Route path="/html2canvas-jspdf" element={<PdfExportSample />} />
       <Route path="*" element={<NotFount />} />
     </Routes>
   );

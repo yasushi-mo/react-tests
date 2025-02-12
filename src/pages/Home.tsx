@@ -51,6 +51,8 @@ export const Home = ({ authorized }: { authorized: boolean }) => {
       <Link to="/playwright/to-have-css/hover-button">HoverButton</Link>
       <br />
       <Link to="/playwright/to-have-css/fade-in-text">FadeInText</Link>
+      <br />
+      <Link to="/html2canvas-jspdf">PdfExportSample</Link>
     </>
   );
 };
