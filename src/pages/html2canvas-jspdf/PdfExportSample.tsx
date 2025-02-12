@@ -15,17 +15,17 @@ export function PdfExportSample() {
       const canvas = await html2canvas(contentRef.current);
 
       // 2️⃣ Canvasを画像として取得（Base64のPNGデータ）
-      const imgSrc = canvas.toDataURL("image/png");
+      const imgData = canvas.toDataURL("image/png");
 
       // 3️⃣ jsPDF インスタンスを作成（A4縦向き）
-      const pdf = new jsPDF("p", "mm", "a4");
+      const pdf = new jsPDF({ orientation: "p", unit: "mm", format: "a4" });
 
       // 4️⃣ PDFの幅を取得し、アスペクト比を維持した高さを計算
       const pdfWidth = pdf.internal.pageSize.getWidth();
       const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
 
       // 5️⃣ 画像をPDFに追加（左上から配置）
-      pdf.addImage(imgSrc, "PNG", 0, 0, pdfWidth, pdfHeight);
+      pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
 
       // 6️⃣ PDFをダウンロード
       pdf.save("document.pdf");
