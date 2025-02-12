@@ -18,7 +18,7 @@ export function PdfExportSample() {
       const imgSrc = canvas.toDataURL("image/png");
 
       // 3️⃣ jsPDF インスタンスを作成（A4縦向き）
-      const pdf = new jsPDF("p", "mm", "a4");
+      const pdf = new jsPDF({ orientation: "p", unit: "mm", format: "a4" });
 
       // 4️⃣ PDFの幅を取得し、アスペクト比を維持した高さを計算
       const pdfWidth = pdf.internal.pageSize.getWidth();
