@@ -24,6 +24,7 @@ import { HeadingFontSize } from "./pages/playwright/toHaveCSS/HeadingFontSize";
 import { HoverButton } from "./pages/playwright/toHaveCSS/HoverButton";
 import { FadeInText } from "./pages/playwright/toHaveCSS/HadeInText";
 import { PdfExportSample } from "./pages/html2canvas-jspdf/PdfExportSample";
+import { PdfExportWithPageSplitting } from "./pages/html2canvas-jspdf/PdfExportWithPageSplitting";
 
 function App() {
   return (
@@ -68,6 +69,10 @@ function App() {
         element={<FadeInText />}
       />
       <Route path="/html2canvas-jspdf" element={<PdfExportSample />} />
+      <Route
+        path="/html2canvas-jspdf/page-splitting"
+        element={<PdfExportWithPageSplitting />}
+      />
       <Route path="*" element={<NotFount />} />
     </Routes>
   );
