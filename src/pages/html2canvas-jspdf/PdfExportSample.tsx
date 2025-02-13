@@ -25,7 +25,14 @@ export function PdfExportSample() {
       const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
 
       // 5️⃣ 画像をPDFに追加（左上から配置）
-      pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+      pdf.addImage({
+        imageData: imgData,
+        format: "PNG",
+        x: 0,
+        y: 0,
+        width: pdfWidth,
+        height: pdfHeight,
+      });
 
       // 6️⃣ PDFをダウンロード
       pdf.save("document.pdf");
