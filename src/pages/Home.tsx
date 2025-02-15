@@ -57,6 +57,10 @@ export const Home = ({ authorized }: { authorized: boolean }) => {
       <Link to="/html2canvas-jspdf/page-splitting">
         PdfExportWithPageSplitting
       </Link>
+      <br />
+      <Link to="/html2canvas-jspdf/header-footer">
+        PdfExportWithHeaderFooter
+      </Link>
     </>
   );
 };
