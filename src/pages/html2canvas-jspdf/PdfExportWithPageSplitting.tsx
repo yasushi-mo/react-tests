@@ -11,32 +11,34 @@ export function PdfExportWithPageSplitting() {
     if (!contentRef.current) return;
 
     try {
-      // 1️⃣ 指定した要素をキャプチャしてCanvasに変換
+      // 1️. 指定した要素をキャプチャしてCanvasに変換
       const canvas = await html2canvas(contentRef.current);
 
-      // 2️⃣ Canvasを画像として取得（Base64のPNGデータ）
+      // 2️. Canvasを画像として取得（Base64のPNGデータ）
       const imageData = canvas.toDataURL("image/png");
 
-      // 3️⃣ jsPDF インスタンスを作成（A4縦向き）
+      // 3️. jsPDF インスタンスを作成（A4縦向き）
       const pdf = new jsPDF({ orientation: "p", unit: "mm", format: "a4" });
 
-      // 4️⃣ PDFの幅と高さを取得
+      // 4️. PDFの幅と高さを取得
       const pdfWidth = pdf.internal.pageSize.getWidth();
       const pdfHeight = pdf.internal.pageSize.getHeight();
 
-      // 5️⃣ 画像の幅と高さを取得
+      // 5️. 画像の幅と高さを取得
       const imageWidth = canvas.width;
       const imageHeight = canvas.height;
 
-      // 6️⃣ 画像をPDFにフィットさせるための比率を計算
+      // 6️. 画像をPDFにフィットさせるための比率を計算
       const ratio = pdfWidth / imageWidth;
-      /** 画像全体の高さをPDFの幅に合わせたサイズにスケールした値 */
+      // 7. 画像全体をPDFに合わせた場合の高さを計算
       const scaledHeight = imageHeight * ratio;
-      /** 現在の描画開始位置 */
+      /** 現在の描画開始位置（スケール後の画像上でのY座標） */
       let position = 0;
 
-      // 7️⃣ 描画開始位置がスケール後の画像の高さより小さい間、ページを分割して画像を追加
+      // 8. 画像全体が描画されるまでループ
+      // 条件：position（描画開始位置）がscaledHeight（スケール後の画像全体の高さ）より小さい間
       while (position < scaledHeight) {
+        // 9. 画像を追加
         pdf.addImage({
           imageData: imageData,
           format: "PNG",
@@ -46,14 +48,14 @@ export function PdfExportWithPageSplitting() {
           width: pdfWidth,
           height: scaledHeight,
         });
-        // 8️⃣ 1ページ分の高さを加算（ページごとに pdfHeight 分だけ増やす）
+        // 10. 1ページ分の高さを加算（ページごとに pdfHeight 分だけ増やす）
         position += pdfHeight;
-        // 9️⃣ 画像の全体が描画されていない場合、新しいページを追加
+        // 11. まだ描画していない画像部分が残っている場合は新しいページを追加
         if (position < scaledHeight) {
           pdf.addPage();
         }
       }
-      // 🔟 PDFを保存
+      // 12. PDFを保存
       pdf.save("document.pdf");
     } catch (error) {
       console.error("PDF生成中にエラーが発生しました:", error);
