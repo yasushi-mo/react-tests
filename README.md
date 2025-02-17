@@ -2,8 +2,9 @@
 
 ## React libraries
 - [React バーコード生成ライブラリ react-barcode と next-barcode の比較](https://qiita.com/Yasushi-Mo/items/4c6370d136db863112e2)
-- [React-pdf を使ってみた](https://qiita.com/Yasushi-Mo/items/93aecc0a204eb683d6bc)
 - [【React】React Zoom Pan Pinch を使ってみた](https://qiita.com/Yasushi-Mo/items/8bef1c5fc80f7e8cf5ee)
+- [React-pdf を使ってみた](https://qiita.com/Yasushi-Mo/items/93aecc0a204eb683d6bc)
+- [【React】html2canvas と jsPDF を使ってWebページのデザインをそのままPDF化](https://qiita.com/Yasushi-Mo/items/dc65a76351c063dbe884)
 
 ## JavaScript
 - [【JavaScript】padStart で数字の先頭に0をつける](https://qiita.com/Yasushi-Mo/items/b5578890d666776fe404)
