@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
 test("text should fade in when hovered", async ({ page }) => {
-  await page.goto("http://localhost:3000/playwright/to-have-css/fade-in-text");
+  await page.goto("/playwright/to-have-css/fade-in-text");
 
   const text = page.getByText("Hover over me");
 
