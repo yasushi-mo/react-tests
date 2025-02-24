@@ -6,6 +6,7 @@
 - [【React】DOMPurify で XSS 対策](https://qiita.com/Yasushi-Mo/items/c8ab10669772e9c5ab28)
 - [React-pdf を使ってみた](https://qiita.com/Yasushi-Mo/items/93aecc0a204eb683d6bc)
 - [【React】html2canvas と jsPDF を使ってWebページのデザインをそのままPDF化](https://qiita.com/Yasushi-Mo/items/dc65a76351c063dbe884)
+- [【React】html2canvas と jsPDF を使ってWebページのデザインを複数ページのPDFファイルにする](https://qiita.com/Yasushi-Mo/items/954b66872ead12523b0c)
 
 ## JavaScript
 - [【JavaScript】padStart で数字の先頭に0をつける](https://qiita.com/Yasushi-Mo/items/b5578890d666776fe404)
