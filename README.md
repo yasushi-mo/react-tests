@@ -7,6 +7,7 @@
 - [React-pdf を使ってみた](https://qiita.com/Yasushi-Mo/items/93aecc0a204eb683d6bc)
 - [【React】html2canvas と jsPDF を使ってWebページのデザインをそのままPDF化](https://qiita.com/Yasushi-Mo/items/dc65a76351c063dbe884)
 - [【React】html2canvas と jsPDF を使ってWebページのデザインを複数ページのPDFファイルにする](https://qiita.com/Yasushi-Mo/items/954b66872ead12523b0c)
+- [【React】html2canvas と jsPDF を使って作成するPDFにヘッダーとフッターを追加する](https://qiita.com/Yasushi-Mo/items/21ed8afab2a6ca2a9249)
 
 ## JavaScript
 - [【JavaScript】padStart で数字の先頭に0をつける](https://qiita.com/Yasushi-Mo/items/b5578890d666776fe404)
