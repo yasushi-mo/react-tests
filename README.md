@@ -25,3 +25,7 @@
 ## ESLint
 - [【ESLint / Flat Config】naming-convention を使って命名規則をチェックする](https://qiita.com/Yasushi-Mo/items/a5fcd615a44b4f15390a)
 - [eslint-plugin-jsx-a11y を使ってアクセシビリティ改善](https://qiita.com/Yasushi-Mo/items/524330da3723ab1018d7)
+
+## Vitest
+- [Vitest の toBe と toEqual の使い分け](https://qiita.com/Yasushi-Mo/items/8bdda16fcbba1facd431)
+- [Vitest のモック関数 fn、spyOn、mock の使い分け](https://qiita.com/Yasushi-Mo/items/811456b9a0e9ee735b4b)
