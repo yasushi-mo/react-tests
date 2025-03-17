@@ -11,6 +11,7 @@
 
 ## JavaScript
 - [【JavaScript】padStart で数字の先頭に0をつける](https://qiita.com/Yasushi-Mo/items/b5578890d666776fe404)
+- [【JavaScript】配列逆順操作メソッド reverse() vs toReversed()](https://qiita.com/Yasushi-Mo/items/e2d69e8fb9441569eeee)
 
 ## TypeScripts
 - [【TypeScript】Utility Types で型を再利用](https://qiita.com/Yasushi-Mo/items/90ea42d5981c343f3d81)
