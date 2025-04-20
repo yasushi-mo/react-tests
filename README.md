@@ -30,3 +30,6 @@
 ## Vitest
 - [Vitest の toBe と toEqual の使い分け](https://qiita.com/Yasushi-Mo/items/8bdda16fcbba1facd431)
 - [Vitest のモック関数 fn、spyOn、mock の使い分け](https://qiita.com/Yasushi-Mo/items/811456b9a0e9ee735b4b)
+
+## Playwright
+- [【Playwright】toHaveCSS を使って CSS を自動テスト](https://qiita.com/Yasushi-Mo/items/3f4efa9e9a6a32c5d79a)
