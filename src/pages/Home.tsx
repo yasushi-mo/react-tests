@@ -61,6 +61,8 @@ export const Home = ({ authorized }: { authorized: boolean }) => {
       <Link to="/html2canvas-jspdf/header-footer">
         PdfExportWithHeaderFooter
       </Link>
+      <br />
+      <Link to="/css/flex">Flex</Link>
     </>
   );
 };
