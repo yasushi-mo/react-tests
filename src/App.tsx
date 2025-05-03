@@ -26,6 +26,7 @@ import { FadeInText } from "./pages/playwright/toHaveCSS/HadeInText";
 import { PdfExportSample } from "./pages/html2canvas-jspdf/PdfExportSample";
 import { PdfExportWithPageSplitting } from "./pages/html2canvas-jspdf/PdfExportWithPageSplitting";
 import PdfExportWithHeaderFooter from "./pages/html2canvas-jspdf/PdfExportWithHeaderFooter";
+import { Flex } from "./pages/css/Flex";
 
 function App() {
   return (
@@ -78,6 +79,7 @@ function App() {
         path="/html2canvas-jspdf/header-footer"
         element={<PdfExportWithHeaderFooter />}
       />
+      <Route path="/css/flex" element={<Flex />} />
       <Route path="*" element={<NotFount />} />
     </Routes>
   );
