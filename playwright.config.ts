@@ -21,6 +21,28 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: "html",
+  // （任意）全スナップショット共通の出力先テンプレート
+  // {projectName} や {testFilePath} などのプレースホルダーが利用可能
+  snapshotPathTemplate:
+    "__tests__/e2e/__snapshots__/{projectName}/{testFilePath}/{arg}{ext}",
+
+  expect: {
+    // ─── 画像スナップショットのグローバル設定 ───
+    toHaveScreenshot: {
+      // 差分を許容する最大ピクセル数
+      maxDiffPixels: 100,
+      // 差分を許容するピクセル比率 (0～1)
+      threshold: 0.1,
+      // スナップショット安定化のために動的要素を隠す CSS ファイルを指定
+      stylePath: "__tests__/styles/screenshot.css",
+    },
+    // ─── ARIA スナップショット（toMatchAriaSnapshot）のグローバル設定 ───
+    toMatchAriaSnapshot: {
+      // ARIA スナップショット専用の出力先テンプレート
+      pathTemplate:
+        "__tests__/e2e/__aria-snapshots__/{projectName}/{testFilePath}/{arg}{ext}",
+    },
+  },
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
