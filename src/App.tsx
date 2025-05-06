@@ -27,6 +27,7 @@ import { PdfExportSample } from "./pages/html2canvas-jspdf/PdfExportSample";
 import { PdfExportWithPageSplitting } from "./pages/html2canvas-jspdf/PdfExportWithPageSplitting";
 import PdfExportWithHeaderFooter from "./pages/html2canvas-jspdf/PdfExportWithHeaderFooter";
 import { Flex } from "./pages/css/Flex";
+import { Snapshot } from "./pages/Snapshot";
 
 function App() {
   return (
@@ -80,6 +81,7 @@ function App() {
         element={<PdfExportWithHeaderFooter />}
       />
       <Route path="/css/flex" element={<Flex />} />
+      <Route path="/snapshot" element={<Snapshot />} />
       <Route path="*" element={<NotFount />} />
     </Routes>
   );

@@ -63,6 +63,8 @@ export const Home = ({ authorized }: { authorized: boolean }) => {
       </Link>
       <br />
       <Link to="/css/flex">Flex</Link>
+      <br />
+      <Link to="/snapshot">Snapshot</Link>
     </>
   );
 };
