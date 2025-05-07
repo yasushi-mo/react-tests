@@ -21,7 +21,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: "html",
-  // （任意）全スナップショット共通の出力先テンプレート
+  // ─── 全スナップショット共通の出力先テンプレート ───
   // {projectName} や {testFilePath} などのプレースホルダーが利用可能
   snapshotPathTemplate:
     "__tests__/e2e/__snapshots__/{projectName}/{testFilePath}/{arg}{ext}",
@@ -29,9 +29,9 @@ export default defineConfig({
   expect: {
     // ─── 画像スナップショットのグローバル設定 ───
     toHaveScreenshot: {
-      // 差分を許容する最大ピクセル数
+      // ベースライン画像と比較して「ピクセル単位」で許容する差分の絶対値
       maxDiffPixels: 100,
-      // 差分を許容するピクセル比率 (0～1)
+      // 画面全体のピクセル数に対する「差分ピクセルの割合」 (0-1)
       threshold: 0.1,
       // スナップショット安定化のために動的要素を隠す CSS ファイルを指定
       stylePath: "__tests__/styles/screenshot.css",
