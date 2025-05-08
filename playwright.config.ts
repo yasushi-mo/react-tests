@@ -24,7 +24,7 @@ export default defineConfig({
   // ─── 全スナップショット共通の出力先テンプレート ───
   // {projectName} や {testFilePath} などのプレースホルダーが利用可能
   snapshotPathTemplate:
-    "__tests__/e2e/__snapshots__/{projectName}/{testFilePath}/{arg}{ext}",
+    "src/__tests__/e2e/__snapshots__/{projectName}/{testFilePath}/{arg}{ext}",
 
   expect: {
     // ─── 画像スナップショットのグローバル設定 ───
@@ -34,7 +34,7 @@ export default defineConfig({
       // 画面全体のピクセル数に対する「差分ピクセルの割合」 (0-1)
       threshold: 0.1,
       // スナップショット安定化のために動的要素を隠す CSS ファイルを指定
-      stylePath: "__tests__/styles/screenshot.css",
+      stylePath: "src/__tests__/styles/screenshot.css",
     },
     // ─── ARIA スナップショット（toMatchAriaSnapshot）のグローバル設定 ───
     toMatchAriaSnapshot: {
