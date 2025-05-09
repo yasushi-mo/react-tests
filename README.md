@@ -33,3 +33,4 @@
 
 ## Playwright
 - [【Playwright】toHaveCSS を使って CSS を自動テスト](https://qiita.com/Yasushi-Mo/items/3f4efa9e9a6a32c5d79a)
+- [【Playwright】要素キャプチャからdiff比較まで！スクショ機能フル活用術](https://qiita.com/Yasushi-Mo/items/eca3cf509585d95b7d9b)
