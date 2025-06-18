@@ -28,6 +28,8 @@ import { PdfExportWithPageSplitting } from "./pages/html2canvas-jspdf/PdfExportW
 import PdfExportWithHeaderFooter from "./pages/html2canvas-jspdf/PdfExportWithHeaderFooter";
 import { Flex } from "./pages/css/Flex";
 import { Snapshot } from "./pages/Snapshot";
+import ChoiceViewer from "./pages/ChoiceViewer";
+import { ChoiceProvider } from "./contexts/ChoiceContext";
 
 function App() {
   return (
@@ -82,6 +84,14 @@ function App() {
       />
       <Route path="/css/flex" element={<Flex />} />
       <Route path="/snapshot" element={<Snapshot />} />
+      <Route
+        path="/choice-viewer"
+        element={
+          <ChoiceProvider>
+            <ChoiceViewer />
+          </ChoiceProvider>
+        }
+      />
       <Route path="*" element={<NotFount />} />
     </Routes>
   );
