@@ -31,3 +31,14 @@ console.log(uniqueCategoryIds);
 // => [1, 3, 2]
 
 // 例: fetch('/api/update', { method: 'POST', body: JSON.stringify({ categoryIds: uniqueCategoryIds }) })
+
+// [Existence check for large amount of data]
+const viewedArticleIds = new Set([1001, 1002, 1003, 1004]);
+
+const currentArticleId = 1002;
+
+if (viewedArticleIds.has(currentArticleId)) {
+  console.log("✔ 閲覧済みマークを表示");
+} else {
+  console.log("未閲覧");
+}
