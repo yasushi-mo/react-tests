@@ -65,3 +65,8 @@ setName.add({ name: "Alice" });
 setName.add({ name: "Alice" });
 
 console.log(setName.size); // 2（異なる参照とみなされる）
+
+// [sort]
+const scores = new Set([40, 10, 20]);
+const sorted = [...scores].sort((a, b) => a - b);
+console.log(sorted); // [10, 20, 40]
