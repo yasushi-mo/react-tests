@@ -58,3 +58,10 @@ console.log(rolesToRemove);
 const rolesToAdd = [...updatedRoles].filter((role) => !currentRoles.has(role));
 console.log(rolesToAdd);
 // => ["admin"]
+
+// [Reference match]
+const setName = new Set<{ name: string }>();
+setName.add({ name: "Alice" });
+setName.add({ name: "Alice" });
+
+console.log(setName.size); // 2（異なる参照とみなされる）
