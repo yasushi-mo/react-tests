@@ -42,3 +42,19 @@ if (viewedArticleIds.has(currentArticleId)) {
 } else {
   console.log("未閲覧");
 }
+
+// [Data comparison and integration using set operations]
+const currentRoles = new Set(["viewer", "editor"]);
+const updatedRoles = new Set(["admin", "editor"]);
+
+// 削除するロール（現在はあるが、更新後はない）
+const rolesToRemove = [...currentRoles].filter(
+  (role) => !updatedRoles.has(role)
+);
+console.log(rolesToRemove);
+// => ["viewer"]
+
+// 追加するロール（更新後にはあるが、現在はない）
+const rolesToAdd = [...updatedRoles].filter((role) => !currentRoles.has(role));
+console.log(rolesToAdd);
+// => ["admin"]
