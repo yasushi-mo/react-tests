@@ -1,7 +1,7 @@
 const set = new Set([1, 2, 3, 3, 2]);
 console.log(set); // Set(3) { 1, 2, 3 }
 
-// add / delete / has
+// [add / delete / has]
 const fruits = new Set();
 
 fruits.add("apple");
@@ -13,7 +13,7 @@ console.log(fruits.has("banana")); // true
 fruits.delete("banana");
 console.log(fruits.has("banana")); // false
 
-// loop
+// [loop]
 const colors = new Set(["red", "green", "blue"]);
 
 for (const color of colors) {
@@ -22,3 +22,12 @@ for (const color of colors) {
 // red
 // green
 // blue
+
+// [Duplication prevention]
+const selectedCategoryIds = [1, 3, 2, 3, 1];
+const uniqueCategoryIds = [...new Set(selectedCategoryIds)];
+
+console.log(uniqueCategoryIds);
+// => [1, 3, 2]
+
+// 例: fetch('/api/update', { method: 'POST', body: JSON.stringify({ categoryIds: uniqueCategoryIds }) })
