@@ -60,4 +60,4 @@ function applyThemeColor(colorName: ColorName) {
 }
 
 applyThemeColor("primary"); // ✅ OK
-applyThemeColor("invalid"); // ❌ エラー: 型 '"invalid"' を型
+// applyThemeColor("invalid"); // ❌ エラー: 型 '"invalid"' を型
