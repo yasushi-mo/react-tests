@@ -61,3 +61,14 @@ function applyThemeColor(colorName: ColorName) {
 
 applyThemeColor("primary"); // ✅ OK
 // applyThemeColor("invalid"); // ❌ エラー: 型 '"invalid"' を型
+
+type Status = "loading" | "success" | "error";
+
+// vs type annotation
+// 型注釈を使用
+export const status1: Status = "loading";
+// status1 の型: Status
+
+// satisfies を使用
+export const status2 = "loading" satisfies Status;
+// status2 の型: "loading"
