@@ -72,3 +72,7 @@ export const status1: Status = "loading";
 // satisfies を使用
 export const status2 = "loading" satisfies Status;
 // status2 の型: "loading"
+
+// vs assertion
+export const data = { name: "John", age: 30 } as { name: string }; // age プロパティが無視される
+// export const data2 = { name: "John", age: 30 } satisfies { name: string }; // ❌ エラー: age プロパティが余分
