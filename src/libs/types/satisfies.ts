@@ -45,3 +45,58 @@ export const safeConfig = {
   size: "medium",
   // invalidProp: "value" // 余分なプロパティ
 } satisfies Config; // ❌ エラー: オブジェクトリテラルは既知のプロパティのみ指定できます
+
+// use cases
+// 1. 設定オブジェクトの型安全性確保
+type ApiConfig = {
+  endpoints: {
+    users: string;
+    posts: string;
+    comments: string;
+  };
+  timeouts: {
+    default: number;
+    upload: number;
+    download: number;
+  };
+  retryPolicy: {
+    maxRetries: number;
+    backoffMs: number;
+  };
+};
+
+// ❌ satisfies なしの場合 - 必須プロパティが漏れても気づかない
+export const unsafeConfig = {
+  endpoints: {
+    users: "/api/users",
+    posts: "/api/posts",
+    // comments が漏れている！
+  },
+  timeouts: {
+    default: 5000,
+    upload: 30000,
+    // download が漏れている！
+  },
+  retryPolicy: {
+    maxRetries: 3,
+    backoffMs: 1000,
+  },
+};
+
+// ✅ satisfies ありの場合 - 必須プロパティの漏れでコンパイルエラー
+export const safeConfig2 = {
+  endpoints: {
+    users: "/api/users",
+    posts: "/api/posts",
+    comments: "/api/comments",
+  },
+  timeouts: {
+    default: 5000,
+    upload: 30000,
+    download: 10000,
+  },
+  retryPolicy: {
+    maxRetries: 3,
+    backoffMs: 1000,
+  },
+} satisfies ApiConfig;
