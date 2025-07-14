@@ -47,7 +47,6 @@ export const safeConfig = {
 } satisfies Config; // ❌ エラー: オブジェクトリテラルは既知のプロパティのみ指定できます
 
 // use cases
-// 1. 設定オブジェクトの型安全性確保
 type ApiConfig = {
   endpoints: {
     users: string;
@@ -100,3 +99,6 @@ export const safeConfig2 = {
     backoffMs: 1000,
   },
 } satisfies ApiConfig;
+
+// safeConfig.timeouts.default の型は number として推論される
+// safeConfig.retryPolicy.maxRetries の型は number として推論される
