@@ -18,61 +18,59 @@ export const config2 = {
 } satisfies Config;
 // 推論: { theme: "light"; size: "medium" }（具体的な値の型が保持される）
 
-// use
-type ThemeConfig = {
-  colors: Record<string, string>;
-  spacing: Record<string, number>;
+// use case
+type ApiConfig = {
+  endpoints: {
+    users: string;
+    posts: string;
+    comments: string;
+  };
+  timeouts: {
+    default: number;
+    upload: number;
+    download: number;
+  };
+  retryPolicy: {
+    maxRetries: number;
+    backoffMs: number;
+  };
 };
 
-export const myTheme = {
-  colors: {
-    primary: "#007bff",
-    secondary: "#6c757d",
-    success: "#28a745",
+// satisfies なしの場合 - 必須プロパティが漏れても気づかない
+export const unsafeConfig = {
+  endpoints: {
+    users: "/api/users",
+    posts: "/api/posts",
+    // comments が漏れている！
   },
-  spacing: {
-    small: 8,
-    medium: 16,
-    large: 24,
+  timeouts: {
+    default: 5000,
+    upload: 30000,
+    // download が漏れている！
   },
-} satisfies ThemeConfig;
+  retryPolicy: {
+    maxRetries: 3,
+    backoffMs: 1000,
+  },
+};
 
-// myTheme.colors.primary の型は string ではなく "#007bff" として推論される
-// myTheme.spacing.small の型は number ではなく 8 として推論される
+// satisfies ありの場合 - 必須プロパティの漏れでコンパイルエラー
+export const safeConfig = {
+  endpoints: {
+    users: "/api/users",
+    posts: "/api/posts",
+    comments: "/api/comments",
+  },
+  timeouts: {
+    default: 5000,
+    upload: 30000,
+    download: 15000,
+  },
+  retryPolicy: {
+    maxRetries: 3,
+    backoffMs: 1000,
+  },
+} satisfies ApiConfig;
 
-export function getTextColor(
-  theme: typeof myTheme,
-  colorName: keyof typeof myTheme.colors
-) {
-  if (colorName === "primary") {
-    // colorName が "primary" の場合、myTheme.colors.primary は "#007bff" と推論される
-    return myTheme.colors.primary; // "#007bff"
-  }
-  return myTheme.colors[colorName];
-}
-
-type ColorName = keyof typeof myTheme.colors; // "primary" | "secondary" | "success"
-
-function applyThemeColor(colorName: ColorName) {
-  // 具体的な色の値が型として利用可能
-  const color = myTheme.colors[colorName];
-  console.log(`適用される色: ${color}`);
-}
-
-applyThemeColor("primary"); // ✅ OK
-// applyThemeColor("invalid"); // ❌ エラー: 型 '"invalid"' を型
-
-type Status = "loading" | "success" | "error";
-
-// vs type annotation
-// 型注釈を使用
-export const status1: Status = "loading";
-// status1 の型: Status
-
-// satisfies を使用
-export const status2 = "loading" satisfies Status;
-// status2 の型: "loading"
-
-// vs assertion
-export const data = { name: "John", age: 30 } as { name: string }; // age プロパティが無視される
-// export const data2 = { name: "John", age: 30 } satisfies { name: string }; // ❌ エラー: age プロパティが余分
+// safeConfig.timeouts.default の型は number ではなく 5000 として推論される
+// safeConfig.retryPolicy.maxRetries の型は number ではなく 3 として推論される
