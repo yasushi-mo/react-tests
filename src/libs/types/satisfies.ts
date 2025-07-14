@@ -47,6 +47,7 @@ export const safeConfig = {
 } satisfies Config; // ❌ エラー: オブジェクトリテラルは既知のプロパティのみ指定できます
 
 // use cases
+// 1. 設定オブジェクトの型安全性確保
 type ApiConfig = {
   endpoints: {
     users: string;
@@ -102,3 +103,38 @@ export const safeConfig2 = {
 
 // safeConfig.timeouts.default の型は number として推論される
 // safeConfig.retryPolicy.maxRetries の型は number として推論される
+
+// as const
+type ConfigAsConst = {
+  port: number;
+  host: string;
+  ssl: boolean;
+};
+
+// satisfies のみの場合
+export const config1AsConst = {
+  port: 3000,
+  host: "localhost",
+  ssl: false,
+} satisfies ConfigAsConst;
+// config1.port の型は number
+// config1.host の型は string
+// config1.ssl の型は boolean
+
+// as const と satisfies の組み合わせ
+export const config2AsConst = {
+  port: 3000,
+  host: "localhost",
+  ssl: false,
+} as const satisfies ConfigAsConst;
+// config2.port の型は 3000（リテラル型）
+// config2.host の型は "localhost"（リテラル型）
+// config2.ssl の型は false（リテラル型）
+
+// 型制約違反があった場合はエラーになる
+export const invalidConfig = {
+  port: 3000,
+  host: "localhost",
+  ssl: false,
+  // ssl: "invalid" // ❌ エラー: boolean が期待されるのに string が指定されている
+} as const satisfies ConfigAsConst;
