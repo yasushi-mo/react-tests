@@ -1,3 +1,35 @@
+// vs type inference
+type ConfigInference = {
+  theme: "light" | "dark";
+  size: "small" | "medium" | "large";
+};
+
+// 型推論のみ
+export const config1Inference = {
+  theme: "light",
+  size: "medium",
+};
+// 推論: { theme: string; size: string }（型制約なし、幅広い型）
+
+// satisfies を使用
+export const config2Inference = {
+  theme: "light",
+  size: "medium",
+} satisfies ConfigInference;
+// 推論: { theme: "light"; size: "medium" }（型制約あり、具体的な値の型が保持）
+
+// 型推論だけだと、不正な値でもエラーにならない
+export const invalidConfig1Inference = {
+  theme: "blue", // ❌ 実際は無効だが、エラーにならない
+  size: "huge", // ❌ 実際は無効だが、エラーにならない
+};
+
+// satisfies なら不正な値でエラーになる
+// export const invalidConfig2Inference = {
+//   theme: "blue", // ❌ エラー: '"blue"' は型 '"light" | "dark"' に割り当てできません
+//   size: "huge"   // ❌ エラー: '"huge"' は型 '"small" | "medium" | "large"' に割り当てできません
+// } satisfies ConfigInference;
+
 // vs type annotation
 type Config = {
   theme: "light" | "dark";
