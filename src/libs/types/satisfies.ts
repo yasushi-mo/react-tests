@@ -79,7 +79,6 @@ export const safeConfig = {
 } satisfies Config; // ❌ エラー: オブジェクトリテラルは既知のプロパティのみ指定できます
 
 // use cases
-// 1. 設定オブジェクトの型安全性確保
 type ApiConfig = {
   endpoints: {
     users: string;
@@ -170,3 +169,19 @@ export const invalidConfig = {
   ssl: false,
   // ssl: "invalid" // ❌ エラー: boolean が期待されるのに string が指定されている
 } as const satisfies ConfigAsConst;
+
+// 3. 実行時の型チェックは行わない
+type ConfigCheck = {
+  port: number;
+  host: string;
+};
+
+// コンパイル時は問題なし
+const config = {
+  port: 3000,
+  host: "localhost",
+} satisfies ConfigCheck;
+
+// 実行時に値を変更しても型チェックは行われない
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+(config as any).port = "invalid"; // 実行時エラーにはならない
