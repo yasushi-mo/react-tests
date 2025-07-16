@@ -22,6 +22,7 @@
 - [【TyeScript】never型の概要](https://qiita.com/Yasushi-Mo/items/33b417c4d9464c827465)
 - [【TyeScript】never型を使った網羅性チェック](https://qiita.com/Yasushi-Mo/items/f9bc873aa74f2ea78dc6)
 - [【TypeScript】as const の使いどころ・注意点まとめ](https://qiita.com/Yasushi-Mo/items/fed7712c385433a2585e)
+- [【TypeScript】satisfies 演算子の使いどころ・注意点まとめ](https://qiita.com/Yasushi-Mo/items/20e038f0d8c7799a8ebf)
 
 ## SVG
 - [【SVG】foreginObject を使って SVG でリッチなUI表現を実装する](https://qiita.com/Yasushi-Mo/items/6b2f7443527ef29f3f6c)
