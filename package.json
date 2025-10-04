@@ -26,7 +26,7 @@
     "d3": "^7.9.0",
     "dompurify": "^3.2.4",
     "html2canvas": "^1.4.1",
-    "jspdf": "^3.0.1",
+    "jspdf": "^3.0.2",
     "next-barcode": "^1.5.0",
     "react": "^18.3.1",
     "react-barcode": "^1.6.1",
@@ -66,7 +66,7 @@
     "prettier": "3.5.3",
     "prettier-plugin-organize-imports": "^4.1.0",
     "typescript": "^5.8.3",
-    "vite": "6.3.5",
+    "vite": "6.3.6",
     "vitest": "3.1.4"
   },
   "volta": {
